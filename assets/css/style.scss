@@ -1,0 +1,1392 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+//start the font of website
+@font-face{
+    src: url(../fonts/DancingScript-Bold.ttf);
+    font-family: 'myName';
+}
+@font-face{
+    src: url(../fonts/Roboto-Light.ttf);
+    font-family: 'bodyFont';
+}
+//end the font of website
+//some global property for all website 
+body{
+    overflow: hidden;
+    font-family: 'bodyFont';
+}
+.btn:focus , 
+button:focus ,
+input:focus ,
+.form-control:focus{
+    outline-width: 0px !important;
+    outline-color: transparent !important;
+    box-shadow: 0 0 0 0 rgba($color: #000000, $alpha: 0);
+}
+a{
+    text-decoration: none !important;
+}
+h1{
+    font-size: 30px !important;
+}
+h2{
+    font-size: 28px  !important;
+}
+h3{
+    font-size: 25px  !important;
+}
+h4{
+    font-size: 23px  !important;
+}
+h5{
+    font-size: 20px  !important;
+}
+h6{
+    font-size: 18px  !important;
+}
+p , span{
+    font-size: 15px  !important;
+}
+//the primary colors 
+$primary-color: #ffa409;
+$secondary-color: #333;
+$navbar-bk-color: #f5f5f5;
+$pargraph-color: #fff;
+//start edit the header section 
+header{
+    width: 100%;
+    height: 100vh;
+    background:url(../images/header/header.png) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    //start edit the social accounts  content
+    .socail-account{
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        z-index: 999;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        display: flex;
+        //edit the container of icons that have an circle shape 
+        .icon-container{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 15px;
+            margin: 0px 5px ;
+            border: 2px solid $primary-color;
+            background-color: $secondary-color;
+            color: $pargraph-color;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            transition: .5s ease-in;
+            -webkit-transition: .5s ease-in;
+            -moz-transition: .5s ease-in;
+            -ms-transition: .5s ease-in;
+            -o-transition: .5s ease-in;
+            // the hover effect of the social account 
+            &:hover                                       
+            {           
+                border: 2px solid $secondary-color;
+                background-color: $primary-color;
+            }
+        }
+    }
+    .header-content
+    {
+        height: 90vh;
+        overflow: hidden;      
+        .header-data-content
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            -webkit-transform: translate(-50% , -50%);
+            -moz-transform: translate(-50% , -50%);
+            -ms-transform: translate(-50% , -50%);
+            -o-transform: translate(-50% , -50%);
+            .image-content{
+                width: 250px;
+                height: 50px;
+                overflow: hidden;
+                margin: auto;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+            h2{
+                color: $pargraph-color;
+                margin: 20px 0px ;
+                text-transform: capitalize;
+                &::first-letter{
+                    color: $primary-color;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 50%;
+                    height: 2px;
+                    background-color: $primary-color;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+//end edit the header section 
+//start edit the custom navbar 
+.custom-nav
+{
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    background-color: $navbar-bk-color;
+    //edit the logo brand name
+    .image-logo-contain
+    {
+        width: 130px;
+        line-height: 70px;
+        overflow: hidden;
+        display: inline-block;
+        margin: auto;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }  
+    //edit the navgation page 
+    .navigation-page
+    {
+        float: right;
+        display: flex;       
+        list-style-type: none;
+        position: relative;
+        //edit the list item pages 
+        li{
+            margin: 0 5px 5px 5px;
+            line-height: 70px;        
+            padding: 0 20px;
+            overflow: hidden;
+            position: relative;   
+            //edit navbar anchor link       
+            a{
+                color: $secondary-color;
+                font-size: 15px;
+                text-transform: capitalize;
+                position: relative;
+                z-index: 9999;
+            }
+            cursor: pointer;
+        }
+        //this nav-links is an links not have active class becouse when make hover not conflict with active link 
+        .nav-link
+        {
+            //after for the links that have background from top to bottom with border-raduis and transition 
+            &::after{
+                content: '';
+                width: 100%;
+                height: 0%;
+                background-color: #e7e7e7;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius:0%  0 120% 120%;
+                -webkit-border-radius:0%  0 120% 120%;
+                -moz-border-radius:0%  0 120% 120%;
+                -ms-border-radius:0%  0 120% 120%;
+                -o-border-radius:0%  0 120% 120%;
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+                z-index: 0;
+            }     
+            //before for the bottom border-link from left to right 
+            &::before{
+                content: '';
+                position: absolute;
+                width: 0%;
+                height: 1px;
+                bottom: 0px;
+                background-color: $primary-color;
+                z-index: 99;
+                left: 0;
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+            }  
+            // the hover for link to appear after and before when make hover
+            &:hover{
+                &::after{
+                    height: 180%;                
+                }
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+        //active link page edit  
+        .active{
+            background-color: #e7e7e7;
+            border-bottom: 1px solid $primary-color;
+        }
+        // close icon that appear in tablet screen and mobile screen to close navbar toggler
+        .close-icon{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: $primary-color;
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
+        }
+    }
+    //edit the navigation-toggler
+    .navigation-toggler
+    {
+        color: $primary-color;
+        font-size: 30px;
+        line-height: 70px;
+        float: right;
+        margin-right: 10px;
+        cursor: pointer;
+        display: none;
+    }
+}
+//end edit the custom navbar
+//start the section of company-profile
+.company-profile{
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+    position: relative;
+    background-color: $pargraph-color;
+    //edit the section of company profile content
+    .company-profile-content
+    {
+        margin: auto;
+        text-align: center;
+        //edit the heading
+        h2{
+            color: $secondary-color;
+            position: relative;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+            //make the under line of the heading of company profile section 
+            &::after{
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: -10px;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                width: 20%;
+                height: 3px;
+                background-color: $primary-color;
+            }
+            &::first-letter{
+                color: $primary-color;
+            }
+        }
+        //edit the pargarph color 
+        p{
+            color: $secondary-color;
+            margin-top: 30px;
+        }
+        //start edit the button for read more 
+        .read-more{
+            width: 200px;
+            height: 50px;
+            margin: 10px auto;
+            font-family: sans-serif;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;   
+            transition: .5s;  
+            text-transform: capitalize;  
+            //the button shape 
+            .read-more-content{
+                height: 100%;
+                line-height: 50px;
+                position: relative;
+                background-color: $primary-color;
+                color: #fff;
+                z-index: 999; 
+                transition: .5s;  
+            }
+            //the anchor tag that link to read more information 
+            a{
+                display: inline-block;
+                height: 50px;
+                line-height:50px;
+                background-color: $secondary-color; 
+                width: 100%;
+                color: #fff;
+                text-decoration: none;
+                position: relative;
+                top: -50px;
+                z-index: 1;
+                font-size: 30px;
+                transition: .5s;  
+            }
+            //when make hover for the read more button that link to another page 
+            &:hover a{
+                top: 0px;
+                
+            }
+        }
+    }
+}
+//end the section of company-profile
+//start the section of company project 
+.company-projects
+{
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+    background-color: #eee;
+    //edit the content of company project content heading and pargraph
+    .company-projects-content
+    {
+        position: relative;
+        margin: auto;
+        //edit the heading of h2 
+        h2{
+            position: relative;
+            text-align: center;
+            color: $secondary-color;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+            // make an under line with before
+            &::before{
+                content: '';
+                position: absolute;
+                width: 20%;
+                height: 3px;
+                background-color: $primary-color;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+            }
+            //change the color of first letter
+            &::first-letter{
+                color: $primary-color;
+            }
+        }
+        //make pargraph content 
+        p{
+            color: $secondary-color;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+    }
+    //edit the card contain the company shape 
+    .card
+    {
+        position: relative;
+        border-width: 0px !important;
+        width: 255px;
+        height: 350px;
+        overflow: hidden;
+        margin: auto;
+        cursor: pointer;
+        .image-content{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0%;
+                left: 0px;
+                background-color: rgba($color: $primary-color , $alpha: .45);
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+            }
+        }
+        .card-body{
+            position: absolute;
+            bottom: -120px;
+            background-color: $secondary-color;
+            width: 100%;
+            text-align: center;
+            color: $primary-color;
+            transition: .8s;
+            -webkit-transition: .8s;
+            -moz-transition: .8s;
+            -ms-transition: .8s;
+            -o-transition: .8s;
+            a{
+                margin-right: 5px;
+                color: $navbar-bk-color;
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+                &:hover{
+                    
+                    color: $primary-color;
+                    
+                }
+            }
+           
+        }
+        &:hover{
+            .card-body{
+                bottom: 0px !important;
+               
+            }
+            .image-content::after{
+                top: -100%;
+            }
+           
+        }
+    }
+}
+//end the section of company project 
+//start the section of clients-number
+.clients-number{
+    width: 100%;
+    height: 80vh;
+    background: url(../images/about/about.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    //start edit the clients number cards that contain the cards
+    .clients-number-cards{
+        width: 100%;
+        height: 40vh;
+        position: relative;
+        top: 20vh;
+        //make this padding becouse when hover the icon not appear 
+        .owl-stage
+        {
+            padding: 40px 0px 0px 0px !important;
+        }
+        //edit the cards contain the number of users and projects
+        .card{
+            height: 242px;
+            padding: 20px;
+            text-align: center;
+            margin: 0 10px;
+            background-color: rgba($color: $secondary-color , $alpha: .8);
+            transition: .8s;
+            cursor: pointer;
+            //edit the icon 
+            i{
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                margin: 0 auto;
+                background-color: $primary-color;
+                font-size: 25px;
+                position: relative;
+                top: 80px;
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+            }
+            //edit the heading of card
+            h5{
+                color: $navbar-bk-color;
+                position: relative;
+                top: 100px;
+                text-align: center;
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+            }
+            //edit the paragraph of card
+            p{
+                color: $pargraph-color;
+                opacity: 0;
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+                position: relative;
+                top: 27px;
+                font-size: 30px !important;
+            }
+            //hover for the card 
+            &:hover{
+                //change the bk for card
+                background-color: rgba($color: $primary-color , $alpha: .8);
+                //edit the opacity for card
+                p{
+                    opacity: 1;
+                }
+                //change the direction and bk , color , icons 
+                i{
+                    top: -50px;
+                    background-color: $secondary-color;
+                    color: $primary-color;
+                    border: 2px solid rgba($color: $primary-color , $alpha: .8);
+                }
+                //edit the heading when hover
+                h5{
+                    top: 0px;
+                }
+            }
+        }
+    }
+}
+//end the section of clients-number
+//start the section of work-culture
+.work-culture
+{
+    width: 100%;
+    padding: 30px 0px;
+    //start the section of work culture content
+    .work-culture-content
+    {
+        padding-top: 20px;
+        text-align: center;
+        position: relative;
+        //start edit the heading 
+        h3{
+            text-transform: capitalize;
+            color: $secondary-color;
+            position: relative;
+            margin-bottom: 20px;
+            //the after that made for the line 
+            &::after{
+                content: '';
+                position: absolute;
+                width: 10%;
+                height: 3px;
+                background-color: $primary-color;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -10px
+            }
+        }
+        //end edit the heading
+    }
+    //end the section of work culture content
+    .card
+    {
+        border: 0px;
+        padding: 30px 0px;
+        background-color: #eee;
+        cursor: pointer;
+        height: 400px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        .image-content
+        {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            position: relative;
+            z-index: 9;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                position: absolute;
+                z-index: 99;
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                background-color: $secondary-color;
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+            }   
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 0% !important;
+            background-color: #ffa409;
+            left: 0;
+            top: 0;
+            border-radius: 0% 0% 100% 100%;
+            transition: .8s;
+            -webkit-transition: .8s;
+            -moz-transition: .8s;
+            -ms-transition: .8s;
+            -o-transition: .8s;
+        }
+        .card-body
+        {
+            text-align: center;
+            .card-title
+            {
+                color: $primary-color;
+            }
+            .card-hidden-body
+            {
+                position: absolute;
+                margin: auto;
+                left: 50%;
+                bottom: -100%;
+                transform: translateX(-50%);
+                width: 100%;
+                background-color: $secondary-color;
+                height: 64px;
+                transition: .8s;
+                -webkit-transition: .8s;
+                -moz-transition: .8s;
+                -ms-transition: .8s;
+                -o-transition: .8s;
+                .btn{
+                    width: 70%;
+                    height: 40px;
+                    line-height: 30px;
+                    background-color: $primary-color;
+                    color: $pargraph-color;
+                    position: relative;
+                    top: 12px;
+                }
+            }
+        }
+        &:hover{
+            &::after{
+                height: 35% !important;
+            }
+            .image-content img {
+                transform: scale(.8);
+                box-shadow: 0 0 14px rgba($color: $primary-color , $alpha: .8);
+                -webkit-transform: scale(.8);
+                -moz-transform: scale(.8);
+                -ms-transform: scale(.8);
+                -o-transform: scale(.8);
+            }
+            .card-hidden-body
+            {
+                bottom: 0%;
+            }
+        }
+    }
+}
+//end the section of work-culture
+//start the section of services
+.services{
+    padding: 20px 0px 40px 0px;
+    width: 100%;
+    box-shadow: 10px 0px 22px rgba($color: #000000, $alpha: .2);
+    //start the section of work culture content
+    .services-content
+    {
+        padding-top: 20px;
+        text-align: center;
+        position: relative;
+        //start edit the heading 
+        h3{
+            text-transform: capitalize;
+            color: $secondary-color;
+            position: relative;
+            margin-bottom: 20px;
+            //the after that made for the line 
+            &::after{
+                content: '';
+                position: absolute;
+                width: 10%;
+                height: 3px;
+                background-color: $primary-color;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -10px
+            }
+        }
+        //end edit the heading
+    }
+    //desgin the cards contain the services 
+    .card
+    {
+        position: relative;
+        height: 250px;
+        margin: 30px;
+        display: flex;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 3px solid $secondary-color;
+        //edit the image and data text for the card 
+        .imgbk{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $secondary-color;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: .5s ease-in-out;
+            -webkit-transition: .5s ease-in-out;
+            -moz-transition: .5s ease-in-out;
+            -ms-transition: .5s ease-in-out;
+            -o-transition: .5s ease-in-out;
+            //edit the icon of the card image
+            i{
+                color: $navbar-bk-color;
+                font-size: 60px;
+                transition: .5 ease-in-out;
+                -webkit-transition: .5 ease-in-out;
+                -moz-transition: .5 ease-in-out;
+                -ms-transition: .5 ease-in-out;
+                -o-transition: .5 ease-in-out;
+            } 
+            //edit the data text of the card image
+            &::before{
+                content: attr(data-text);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                font-size: 5em;
+                color: rgba($color: $navbar-bk-color , $alpha: .05);
+                font-weight: 700;
+                transition: .5 ease-in-out;
+                -webkit-transition: .5 ease-in-out;
+                -moz-transition: .5 ease-in-out;
+                -ms-transition: .5 ease-in-out;
+                -o-transition: .5 ease-in-out;
+            }
+        }
+        //edit the card content 
+        .card-content
+        {
+            position: absolute;
+            right: 0;
+            width: calc(100% - 75px);
+            height: 100%;
+            padding: 40px !important; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: capitalize;
+            h3{
+                margin-bottom: 5px;
+                font-size: 24px;
+                color: $secondary-color;
+            }
+            a{
+                display: inline-block;
+                padding: 3px 10px;
+                background-color: $secondary-color;
+                color: $pargraph-color;
+            }
+        }
+        //make an border effect with after and before 
+        &::after{
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            right: -3px;
+            background-color: transparent;
+            border: 3px solid $secondary-color;
+            border-left: 0px;
+            border-bottom: 0px;
+            top: -3px;
+            border-top-right-radius: 5px;
+            transition: .5s ease-in-out;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            right: -3px;
+            background-color: transparent;
+            border: 3px solid $secondary-color;
+            border-left: 0px;
+            border-top: 0px;
+            bottom: -3px;
+            border-bottom-right-radius: 5px;
+            transition: .5s ease-in-out;
+        }
+        //make hover transition for the card and make an beauty effect
+        &:hover{
+            .imgbk{
+                width: 150px;
+                height: 150px;
+                left: -75px;
+                top: calc(50% - 75px);
+                transition: .5s ease-in-out;
+                -webkit-transition: .5s ease-in-out;
+                -moz-transition: .5s ease-in-out;
+                -ms-transition: .5s ease-in-out;
+                -o-transition: .5s ease-in-out;
+                background-color: $primary-color;
+                i{
+                    font-size: 40px;
+                    color: $secondary-color;
+                }
+                &::before{
+                    opacity: 0;
+                }
+            }
+            &::after , &::before{
+                border-color: $primary-color;
+            }
+        }
+      
+    }
+}
+//end the section of services
+//start the section of our customs
+.our-customs
+{
+    width: 100%;
+    padding: 40px 0px;
+    background-color: rgba($color: #000000, $alpha: .2);
+    .our-customs-content
+    {   
+        padding-top: 20px;
+        text-align: center;
+        position: relative;
+        //start edit the heading 
+        h3{
+            text-transform: capitalize;
+            color: $secondary-color;
+            position: relative;
+            margin-bottom: 20px;
+            //the after that made for the line 
+            &::after{
+                content: '';
+                position: absolute;
+                width: 10%;
+                height: 3px;
+                background-color: $primary-color;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -10px
+            }
+        }
+
+    }
+    //edit the card content the client title and logo brand name 
+    .card
+    {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        margin: 20px 0px;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        background-color: transparent !important;
+        border-width: 0px !important;
+        cursor: pointer;
+        //edit the box that contain the logo of our clients and some informations about it
+        .box{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: 1s ease;
+            // the image of the brand of company 
+            .img-bk
+            {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-position: center;
+                }
+
+            }
+            //the content that have div content this section used to make and rotate by 180 deg in y axis
+            .content-bk
+            {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background-color: $secondary-color;
+                backface-visibility: hidden;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                transform-style: preserve-3d;
+                transform: rotateY(180deg);
+                .content{
+                    transform-style: preserve-3d;
+                    padding: 20px;
+                    background-color: $primary-color;
+                    transform: translateZ(70px);
+                    text-align: center;
+                    h3 , p {
+                        color: $navbar-bk-color;
+                        font-size: 20px;                    
+                    }
+                    h3{
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+        // when hover the content appear
+        &:hover .box{
+            transform: rotateY(180deg);
+        }
+    }
+}
+//end the section of our customs
+//start the footer
+footer
+{
+    width: 100%;
+    height: 50px;
+    background-color: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        text-transform: capitalize;
+        font-family: 'myName';
+        font-size: 25px;
+        color: $primary-color;
+        transition: .5s linear;
+        &:hover{
+            color: $navbar-bk-color;
+        }
+    }
+}
+//end the footer
+//start the section of contact-us
+.contact-us
+{
+    position: fixed;
+    width: 400px;
+    height: 100%;
+    background-color: $secondary-color;
+    left: -100%;
+    bottom: 0%;
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    z-index: 999999;
+    transition: 1s ease-in-out;
+    &.active{
+        left: 0%;
+    }
+    form{
+        position: absolute;
+        top: 50%;
+        transform: translate(-50% , -50%);
+        left: 50%;
+        .form-control{
+            width: 250px;
+            margin: auto;
+            background-color: transparent;
+            border: 0px;
+            border-bottom: 2px solid $navbar-bk-color;
+            resize: none;
+            border-radius: 0px;
+            &::placeholder
+            {
+                color: $primary-color;
+            }
+            &::after
+            {
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                content: '';
+                bottom: 0px;
+                left: 0px;
+                background-color: $primary-color !important ;
+            }
+        }
+        .btn{
+            padding: 10px 20px;
+            background-color: $primary-color;
+            color: $navbar-bk-color;
+            text-transform: capitalize;
+        }
+    }
+    .close-button
+    {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        transition: 1s ease-in-out;  
+        cursor: pointer;
+        i{
+            color: $primary-color;
+            transform: rotate(45deg);
+            font-size: 25px;    
+            transition: 1s ease-in-out;
+        }
+        &:hover{
+            i{
+                animation: rotation 1s linear infinite;
+            }            
+        }
+    }
+}
+.contact-us-button
+{
+    position: fixed;
+    left: 4px;
+    bottom: 4px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    text-align: center;
+    background-color: $primary-color;
+    border-radius: 50%;
+    transition: .5s ease;
+    border: 3px solid $primary-color;
+    i{
+        font-size: 20px;
+        animation: rotation 1s linear infinite;
+    }
+    &:hover{
+        background-color: $secondary-color;
+        border: 3px solid $primary-color;
+        i{
+            color: $primary-color;         
+        }
+    }
+}
+@keyframes rotation{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+//end the section of contact us 
+//start edit loading-page
+.loading-page
+{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: linear-gradient(0deg , $primary-color , $secondary-color);
+    top: 0px;
+    left: 0px;
+    z-index: 99999999999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .square
+    {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        animation: nice-rotate 10s linear infinite;
+        border: 10px dashed $primary-color;
+        box-shadow: 0 0 0 10px rgba($color: $primary-color , $alpha: .6) , inset 0 0 0 10px rgba($color: $primary-color , $alpha: .4)  ;
+        span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: hidden;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-top: 10px solid $navbar-bk-color;
+                animation: rotation-shape 2s linear infinite;
+            }
+            &:nth-child(1)
+            {
+                transform: rotate(0deg);
+                &::before{
+                    animation-delay: 0s;
+                }
+            }
+            &:nth-child(2)
+            {
+                transform: rotate(90deg);
+                &::before{
+                    animation-delay: 0.5s;
+                }
+            }
+            &:nth-child(3)
+            {
+                transform: rotate(180deg);
+                &::before{
+                    animation-delay: 1s;
+                }
+            }
+            &:nth-child(4)
+            {
+                transform: rotate(270deg);
+                &::before{
+                    animation-delay: 1.5s;
+                }
+            }
+        }
+    }
+    h3
+    {
+        position: absolute;
+        bottom: 0;
+        color: $pargraph-color;
+        text-transform: capitalize;
+        font-family: 'myName';
+    }
+}
+@keyframes rotation-shape{
+    0%{
+        left: -100%;
+    }
+    25%{
+        left: 0%;
+    }
+    50%, 100%{
+        left: 100%;
+    }
+}
+@keyframes nice-rotate
+{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+//end the loading-page
+//start the scroll to top button 
+.scroll-top-button
+{
+    position: fixed;
+    bottom: 4px;
+    right: 4px;
+    width: 50px;
+    height: 50px;
+    border: 4px solid $primary-color;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: $secondary-color;
+    display: none;
+    transition: .5s linear;
+    cursor: pointer;
+    i{
+        color: $primary-color;
+        font-size: 20px;
+        transition: .5s linear;
+    }
+    &:hover{
+        i{
+            animation: translation .5s linear infinite;
+            color: $secondary-color;
+        }
+        background-color: $primary-color;
+        border-color: $secondary-color;
+        border-style: dashed;
+    }
+}
+@keyframes translation 
+{
+    0%{
+        transform: translateY(2px);
+    }
+    50%{
+        transform: translateY(-2px);
+    }
+    100%{
+        transform: translateY(2px);
+    }
+}
+//end the scroll to top button 
+//media screen for max-width 992px
+@media(max-width: 992px){
+    //edit the navigation-toggler
+    .custom-nav .navigation-toggler
+    {
+        display: block;
+    }
+    .custom-nav .navigation-page
+    {
+        position: fixed;
+        z-index: 99999;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba($color: $secondary-color, $alpha: .9);
+        top: 0px;
+        right: -100%;
+        text-align: center;
+       display: block;
+       transition: .8s;
+       -webkit-transition: .8s;
+       -moz-transition: .8s;
+       -ms-transition: .8s;
+       -o-transition: .8s;
+        border-radius: 120% 0% 0% 120%;
+    }
+    .custom-nav .navigation-page li {
+        display: block !important;
+        margin: 50px auto;
+        line-height: 30px;
+        width: 25%;
+        z-index: 9999;  
+    }
+    .custom-nav .navigation-page li a{
+        color: $primary-color;
+    }
+    .custom-nav .navigation-page .active{
+        border-width: 3px;
+    }
+    .custom-nav .navigation-page .nav-link::before{
+        height: 3px;
+    }
+    .custom-nav .navigation-page.show{
+        right: 0%;
+    }
+    .custom-nav .navigation-page .close-icon
+    {
+        display: block;
+    }
+    //end edit of the navigation toggler 
+    .owl-theme .owl-nav
+    {
+        display: none;
+    }
+    .owl-carousel .owl-dots.disabled
+    {
+        display: block;
+       
+    }
+    .owl-carousel .owl-dots .owl-dot span
+    {
+        margin-top: 20px;
+        border: 1px solid $secondary-color;
+        background-color: rgba($color: $primary-color , $alpha: .2);
+    }
+    .owl-carousel .owl-dots .owl-dot.active span
+    {
+        border: 1px solid $secondary-color;
+        background-color: $primary-color !important;
+    }
+    //edit the services card
+    .services .card:hover .imgbk {
+        width: 130px;
+        height: 130px;
+        left: -30px;
+    }
+}
+//media screen for max-width 660px
+@media(max-width: 660px){
+    //edit the width of list items link 
+    .custom-nav .navigation-page li 
+    {
+        width: 50%;
+    }
+    //edit the service card hover effect 
+    .services .card
+    {
+        overflow: hidden;
+    }
+    //edit the hover effect for the image bk
+    .services .card:hover .imgbk
+    {
+        width: 100%;
+        left: -100%;
+        top: 0;
+        height: 100%;
+        bottom: 0% !important;
+    }
+    //edit the font-size of the image bk content
+    .services .card .imgbk::before
+    {
+        font-size: 3em;
+    }
+    // edit the services content in the card 
+    .services .card .card-content
+    {
+        padding: 40px 0px !important;
+        text-align: center;
+        width: 100%;
+    } 
+}
